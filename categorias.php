@@ -1,7 +1,41 @@
-<?php require_once 'classes/Categoria.php'; //importando a classe categoria.php  ?>
+<?php require_once 'global.php'; //importando a classe categoria.php  ?>
+
 <?php
+
+ try{
+
     $categoria = new Categoria(); //instanciando a classe Categoria
     $lista = $categoria->listar();//chamando o método que tem dentro da classe Categoria.php
+
+
+
+ }catch(exception $ex){
+
+    if(DEBUG){
+
+        echo('<pre>');
+
+        print_r($ex);
+   
+        echo('</pre>');
+   
+
+    }else{
+
+   echo $ex->getMessage();
+
+
+    }
+   
+     exit;
+
+ }
+   
+
+
+
+
+
 ?>
 <?php require_once 'cabecalho.php' ?>
 <div class="row">

@@ -1,5 +1,6 @@
 <?php
- require_once('classes/Conexao.php');//import da classe conexao
+ //require_once('classes/Conexao.php');//import da classe conexao
+ 
 
 class Categoria {
 
@@ -21,6 +22,8 @@ class Categoria {
 
 
     public function listar() {
+         
+        throw new Exception('Erro ao Listar Categorias');
 
         $query = "SELECT id, nome FROM categorias";//consulta no banco
 
@@ -63,6 +66,7 @@ class Categoria {
   public function carregar(){
 
    $query = " SELECT id ,nome FROM categorias  WHERE id = " . $this->id ;
+   
    $conexao = Conexao::pegarConexao();
 
    $resultado = $conexao->query($query);
@@ -77,7 +81,7 @@ class Categoria {
    }
    
 
-  }  
+  }
 
 
   public function excluir(){
