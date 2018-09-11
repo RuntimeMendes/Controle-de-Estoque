@@ -23,7 +23,7 @@ class Categoria {
 
     public function listar() {
          
-        throw new Exception('Erro ao Listar Categorias');
+       // throw new Exception('Erro ao Listar Categorias');
 
         $query = "SELECT id, nome FROM categorias";//consulta no banco
 
